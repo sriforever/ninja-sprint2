@@ -1,0 +1,30 @@
+version: "2"
+services:
+  ##########################
+  # setup server container##
+  ##########################
+  server:
+    build: ./socserver
+    #  expose: -${APP_SERVER_PORT}
+    #  environment:
+    #  API_HOST: ${API_HOST}
+    #  APP_SERVER_PORT: ${APP_SERVER_PORT}
+    ports:
+      - 3231:3231
+    volumes:
+      - ./src/:/usr/src/docker-react-server
+    command: npm run server
+  ##########################
+  # setup client container##
+  ##########################
+  client:
+    build: ./client
+    ports:
+      - 3000:3000
+    # environment: -REACT_APP_PORT=${REACT_APP_PORT}
+    # expose: -${REACT_APP_PORT}
+    volumes:
+      - ./client:/usr/src/docker-react-client
+    links:
+      - server
+    command: npm start
