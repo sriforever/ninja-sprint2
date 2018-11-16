@@ -5,7 +5,7 @@ services:
   ##########################
   server:
     image: sriforever/chatapp_server:latest
-    container_name: srifore
+    container_name: chatapp_server
     build: ./socserver
     #  expose: -${APP_SERVER_PORT}
     #  environment:
@@ -21,7 +21,7 @@ services:
   ##########################
   client:
     image: sriforever/chatapp_server:latest
-    container_name: sriforever/chatapp_client
+    container_name: chatapp_client
     build: ./client
     ports:
       - 3000:3000
