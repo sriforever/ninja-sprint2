@@ -4,7 +4,7 @@ services:
   # setup server container##
   ##########################
   server:
-    image: sriforever/chatapp_server:latest
+    image: sriforever/chatapp_server
     container_name: chatapp_server
     build: ./socserver
     #  expose: -${APP_SERVER_PORT}
@@ -20,7 +20,7 @@ services:
   # setup client container##
   ##########################
   client:
-    image: sriforever/chatapp_server:latest
+    image: sriforever/chatapp_client
     container_name: chatapp_client
     build: ./client
     ports:
