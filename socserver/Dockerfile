@@ -12,7 +12,7 @@ WORKDIR /usr/src/docker-react-client
 
 COPY package*.json ./
 
-RUN npm install --silent
+RUN npm install
 
 RUN npm install socket.io
 RUN npm install  socket.io-client
