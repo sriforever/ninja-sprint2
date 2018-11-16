@@ -16,7 +16,7 @@ RUN npm install
 
 RUN npm install socket.io
 RUN npm install  socket.io-client
-RUN npm install react-scripts@1.1.1 -g 
+RUN npm install react-scripts@2.1.1 -g 
 
 #To bundle your app’s source code inside the Docker image, use the COPY instruction:
 
